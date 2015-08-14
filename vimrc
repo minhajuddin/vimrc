@@ -86,6 +86,8 @@ let NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
 " help bufferline
 let g:bufferline_echo = 0 " hide bufferline from command bar
 let g:bufferline_show_bufnr = 1
+
+" help vim-airline
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
