@@ -61,8 +61,8 @@ colorscheme molokai
 " settings for gvim
 if has("gui_running")
   " maximizes the gvim window
-  "set guifont=Source\ Code\ Pro\ for\ Powerline\ 12
-  set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 11
+  set guifont=Source\ Code\ Pro\ for\ Powerline\ 12
+  "set guifont=Bitstream\ Vera\ Sans\ Mono\ for\ Powerline\ 11
   set lines=999 columns=999
   " No menus and no toolbar
   set guioptions-=m
@@ -74,7 +74,7 @@ if !has("gui_running")
   set t_Co=256
 endif
 
-set laststatus=2
+set laststatus=2 " always show the status bar even when there is only one window
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -83,7 +83,7 @@ set laststatus=2
 " NERDTree
 let NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
 
-" bufferline
+" help bufferline
 let g:bufferline_echo = 0 " hide bufferline from command bar
 let g:bufferline_show_bufnr = 1
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
