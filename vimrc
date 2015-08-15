@@ -1,4 +1,5 @@
 set nocompatible
+" filetype indent plugin on
 " Temporary fix to ignore current vim files while experimenting
 set runtimepath-=~/.vim
 set runtimepath-=~/.vim/after
@@ -28,7 +29,41 @@ Plug 'bling/vim-airline' " awesome status bar
 Plug 'bling/vim-bufferline'
 Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-surround'
-""
+Plug 'tpope/vim-abolish'
+Plug 'mattn/emmet-vim'
+Plug 'tpope/vim-fugitive'
+Plug 'easymotion/vim-easymotion'
+Plug 'matchit.zip'
+Plug 'scrooloose/nerdcommenter'
+Plug 'tpope/vim-repeat'
+Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+" Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
+" Plug 'majutsushi/tagbar'
+" Plug 'dbext.vim' " check more on this
+" languages
+Plug 'vim-ruby/vim-ruby'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-haml'
+Plug 'thoughtbot/vim-rspec'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
+Plug 'elzr/vim-json'
+Plug 'cakebaker/scss-syntax.vim'
+Plug 'tpope/vim-markdown'
+Plug 'elixir-lang/vim-elixir'
+Plug 'nginx.vim'
+Plug 'tpope/vim-dispatch' " async command execution
+Plug 'maksimr/vim-jsbeautify'
+" runtime macros/matchit.vim
+" Plug 'nelstrom/vim-textobj-rubyblock'
+" unused
+" Plug 'kchmck/vim-coffee-script'
+" Plug 'tpope/vim-liquid'
+" Plug 'groenewege/vim-less'
+" Plug 'mxw/vim-jsx'
+" Plug 'leafgarland/typescript-vim'
+
 "Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
 
 "" On-demand loading
@@ -55,6 +90,12 @@ call plug#end()
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"		AUTOCOMMANDS
+" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
+" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+
+" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "		VIM SETTINGS
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 " TODO Move these settings to: Plug 'minhajuddin/vimsettings'
@@ -77,6 +118,12 @@ if !has("gui_running")
 endif
 
 set laststatus=2 " always show the status bar even when there is only one window
+set lazyredraw                  " don't redraw while in macros
+set shortmess=atI               " shorten messages
+set noautoread " don't reload file if it has changed on disk
+set autowriteall " autosave files
+
+
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -107,11 +154,12 @@ let g:syntastic_check_on_wq = 0
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "		MAPPINGS
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+let mapleader=","
 " NERDTree
 map <leader>nt :execute 'NERDTreeToggle'<cr>
 " map <leader>nc :execute 'NERDTreeClose'<cr>
 map <leader>nn :execute 'NERDTree'<cr>
 
-map <C-d> :execute 'source /home/minhajuddin/r/vimrc/vimrc'<cr>
+map <C-d> :execute 'source /home/minhajuddin/r/vimrc/vimrc \| PlugClean \| PlugInstall'<cr>
 
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
