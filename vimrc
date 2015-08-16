@@ -111,40 +111,58 @@ if !has("gui_running")
   set t_Co=256
 endif
 
+let loaded_matchparen=1 " don't automatically highlight the matching parens
+let mapleader      = ' '
+let maplocalleader = ' '
 set autowriteall " autosave files
 set background=dark
 set clipboard=unnamedplus " Yanks go on clipboard
+set cmdheight=2
+set completeopt=menuone,preview,longest
 set cursorline
-set diffopt+=iwhite
-set encoding=utf8
+set diffopt=filler,vertical,iwhite
+set encoding=utf-8
 set expandtab
 set fileencoding=utf8
 set fillchars= " unset pipe as the vertical seperator
 set foldlevel=3
+set foldlevelstart=99
 set foldmethod=syntax
-set synmaxcol=200 " Syntax coloring lines that are too long just slows down the world
-set matchtime=0 " to stop automatic moving of cursor to matched paren
-let loaded_matchparen=1 " don't automatically highlight the matching parens
+set foldopen=block,insert,jump,mark,percent,quickfix,search,tag,undo " These commands open folds
+set grepformat=%f:%l:%c:%m,%f:%l:%m
 set grepprg=grep\ -nH\ $*
-set hlsearch
-set ignorecase
+set guioptions=aci
+set hidden
+set hlsearch " CTRL-L / CTRL-R W
+set ignorecase smartcase
 set lazyredraw                  " don't redraw while in macros
-set listchars=tab:➟\ ,eol:¬,trail:·
+" set list
+set matchtime=0 " to stop automatic moving of cursor to matched paren
 set modeline " read modeline from footer to detect filetype?
+set mouse=a
+set mousehide
 set noautoread
+set nocursorline
+set nojoinspaces
 set number " show line number
 set selectmode=key
 set shiftwidth=2
 set shortmess=atI               " shorten messages and don
+set showfulltag " When completing by tag, show the whole tag, not just the function name
 set showmatch " Show matching braces
-set smartcase
+set showmode
+set smartindent
 set softtabstop=2
 set splitbelow
+set synmaxcol=200 " Syntax coloring lines that are too long just slows down the world
 set tabstop=2
+set timeoutlen=500
 set virtualedit=block
+set whichwrap=b,s
 set wildchar=9 " tab as completion character
 set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build
 set wildmode=list:longest,full
+set wrap!
 syntax sync fromstart
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -158,8 +176,8 @@ let g:NERDShutUp = 1 " disable warnings from NERDCommenter
 
 " ultisnips
 let g:UltiSnipsExpandTrigger="<C-o>"
-let g:UltiSnipsJumpForwardTrigger="<C-n>"
-let g:UltiSnipsJumpBackwardTrigger="<C-p>"
+"let g:UltiSnipsJumpForwardTrigger="<C-n>"
+"let g:UltiSnipsJumpBackwardTrigger="<C-p>"
 let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
 
 " help bufferline
@@ -204,7 +222,6 @@ au Syntax * RainbowParenthesesLoadBraces
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -212,13 +229,13 @@ let g:syntastic_check_on_wq = 0
 
 " indent
 let g:indentLine_char = '│'
+"let g:indentLine_char = "┊"
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "		MAPPINGS
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-let mapleader=","
 " NERDTree
 map <leader>nt :execute 'NERDTreeToggle'<cr>
 " map <leader>nc :execute 'NERDTreeClose'<cr>

@@ -1,10 +1,58 @@
-" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
-let g:UltiSnipsExpandTrigger='<C-o>'
-"let g:UltiSnipsJumpForwardTrigger="<c-b>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-z>"
 
-" If you want :UltiSnipsEdit to split your window.
-let g:UltiSnipsEditSplit="vertical"
+set number
+set autoindent
+set smartindent
+set lazyredraw
+set laststatus=2
+set showcmd
+set visualbell
+set backspace=indent,eol,start
+set timeoutlen=500
+set whichwrap=b,s
+set shortmess=aIT
+set hlsearch " CTRL-L / CTRL-R W
+set incsearch
+set hidden
+set ignorecase smartcase
+set wildmenu
+set wildmode=full
+set tabstop=2
+set shiftwidth=2
+set expandtab smarttab
+set scrolloff=5
+set encoding=utf-8
+set list
+set listchars=tab:\|\ ,
+set virtualedit=block
+set nojoinspaces
+set diffopt=filler,vertical
+set autoread
+set clipboard=unnamed
+set foldlevelstart=99
+set grepformat=%f:%l:%c:%m,%f:%l:%m
+set completeopt=menuone,preview,longest
+set nocursorline
+silent! set cryptmethod=blowfish2
+
+set formatoptions+=1
+if has('patch-7.3.541')
+  set formatoptions+=j
+endif
+if has('patch-7.4.338')
+  let &showbreak = '↳ '
+  set breakindent
+  set breakindentopt=sbr
+endif
+
+
+
+
+
+
+
+
+
+
 
 " from another vimrc
 " Make sure that unsaved buffers that are to be put in the background are
