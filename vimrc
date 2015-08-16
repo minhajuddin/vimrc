@@ -25,9 +25,18 @@ call plug#begin('~/.vim/plugged')
 Plug 'bling/vim-airline' " awesome status bar
 Plug 'bling/vim-bufferline'
 Plug 'cakebaker/scss-syntax.vim'
+Plug 'chriskempson/vim-tomorrow-theme'
+Plug 'ConradIrwin/vim-bracketed-paste'
+Plug 'dyng/ctrlsf.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'elixir-lang/vim-elixir'
 Plug 'elzr/vim-json'
+Plug 'fatih/vim-go'
+Plug 'gregsexton/gitv', { 'on': 'Gitv' }
+Plug 'groenewege/vim-less'
+Plug 'honza/dockerfile.vim'
+Plug 'kchmck/vim-coffee-script'
+Plug 'Keithbsmiley/investigate.vim'
 Plug 'kien/rainbow_parentheses.vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'matchit.zip'
@@ -35,11 +44,13 @@ Plug 'mattn/emmet-vim'
 Plug 'nginx.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' " file browser
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'slim-template/vim-slim'
 Plug 'thoughtbot/vim-rspec'
 Plug 'tomasr/molokai' " colorscheme
 Plug 'tpope/vim-abolish'
@@ -55,9 +66,8 @@ Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'vim-ruby/vim-ruby'
+Plug 'wting/rust.vim'
 Plug 'Yggdroot/indentLine'
-
-
 " Unused plugins
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 " Plug 'majutsushi/tagbar'
