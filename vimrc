@@ -37,6 +37,7 @@ Plug 'matchit.zip'
 Plug 'scrooloose/nerdcommenter'
 Plug 'tpope/vim-repeat'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
+Plug 'ervandew/supertab'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 " Plug 'majutsushi/tagbar'
 " Plug 'dbext.vim' " check more on this
@@ -117,11 +118,51 @@ if !has("gui_running")
   set t_Co=256
 endif
 
+set autoindent
+set autowriteall " autosave files
+set background=dark
+set backspace=2
+set clipboard=unnamedplus " Yanks go on clipboard
+set cursorline
+set diffopt+=iwhite
+set encoding=utf8
+set expandtab
+set fileencoding=utf8
+set fillchars= " unset pipe as the vertical seperator
+set foldlevel=3
+set foldmethod=syntax
+set grepprg=grep\ -nH\ $*
+set hlsearch
+set ignorecase
+set incsearch
 set laststatus=2 " always show the status bar even when there is only one window
 set lazyredraw                  " don't redraw while in macros
-set shortmess=atI               " shorten messages
-set noautoread " don't reload file if it has changed on disk
-set autowriteall " autosave files
+set listchars=tab:➟\ ,eol:¬,trail:·
+set modeline " read modeline from footer to detect filetype?
+set noautoread
+set number " show line number
+set ruler " show line and col number at the bottom
+set selectmode=key
+set shiftwidth=2
+set shortmess=atI               " shorten messages and don
+set showcmd
+set showmatch " Show matching braces
+set smartcase
+set smarttab
+set softtabstop=2
+set splitbelow
+set tabstop=2
+set virtualedit=block
+set wildchar=9 " tab as completion character
+set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build
+set wildmenu
+set wildmode=list:longest,full
+" Spaces instead of tab characters
+syntax on " syntax hilight on
+syntax sync fromstart
+" tab completion stuff
+" This shows what you are typing as a command
+" vimdiff stuff
 
 
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -138,6 +179,7 @@ let g:bufferline_show_bufnr = 1
 
 " help vim-airline
 let g:airline_powerline_fonts = 1
+let g:airline_theme = 'dark'
 
 " syntastic
 set statusline+=%#warningmsg#
