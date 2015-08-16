@@ -68,6 +68,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'wting/rust.vim'
 Plug 'Yggdroot/indentLine'
+Plug 'wincent/Command-T'
 " Unused plugins
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 " Plug 'majutsushi/tagbar'
@@ -142,7 +143,6 @@ set modeline " read modeline from footer to detect filetype?
 set mouse=a
 set mousehide
 set noautoread
-set nocursorline
 set nojoinspaces
 set number " show line number
 set selectmode=key
@@ -243,4 +243,5 @@ map <leader>nn :execute 'NERDTree'<cr>
 
 map <C-d> :execute 'source /home/minhajuddin/r/vimrc/vimrc \| PlugInstall'<cr>
 
+nnoremap <leader>K :call investigate#Investigate()<CR>
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
