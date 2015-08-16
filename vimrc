@@ -69,7 +69,6 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'wting/rust.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'wincent/Command-T'
-Plug 'davidoc/taskpaper.vim'
 " Unused plugins
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 " Plug 'majutsushi/tagbar'
