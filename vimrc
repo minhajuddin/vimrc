@@ -69,6 +69,7 @@ Plug 'vim-ruby/vim-ruby'
 Plug 'wting/rust.vim'
 Plug 'Yggdroot/indentLine'
 Plug 'wincent/Command-T'
+Plug 'davidoc/taskpaper.vim'
 " Unused plugins
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 " Plug 'majutsushi/tagbar'
@@ -229,6 +230,7 @@ let g:syntastic_check_on_wq = 0
 
 " indent
 let g:indentLine_char = '│'
+"let g:indentLine_color_gui = '#333333'
 "let g:indentLine_char = "┊"
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
