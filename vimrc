@@ -92,8 +92,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "		VIM SETTINGS
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-" TODO Move these settings to: Plug 'minhajuddin/vimsettings'
-filetype plugin indent on
+" TODO: Move these settings to: Plug 'minhajuddin/vimsettings'
 colorscheme molokai
 
 " settings for gvim
@@ -112,10 +111,8 @@ if !has("gui_running")
   set t_Co=256
 endif
 
-set autoindent
 set autowriteall " autosave files
 set background=dark
-set backspace=2
 set clipboard=unnamedplus " Yanks go on clipboard
 set cursorline
 set diffopt+=iwhite
@@ -131,30 +128,23 @@ let loaded_matchparen=1 " don't automatically highlight the matching parens
 set grepprg=grep\ -nH\ $*
 set hlsearch
 set ignorecase
-set incsearch
-set laststatus=2 " always show the status bar even when there is only one window
 set lazyredraw                  " don't redraw while in macros
 set listchars=tab:➟\ ,eol:¬,trail:·
 set modeline " read modeline from footer to detect filetype?
 set noautoread
 set number " show line number
-set ruler " show line and col number at the bottom
 set selectmode=key
 set shiftwidth=2
 set shortmess=atI               " shorten messages and don
-set showcmd
 set showmatch " Show matching braces
 set smartcase
-set smarttab
 set softtabstop=2
 set splitbelow
 set tabstop=2
 set virtualedit=block
 set wildchar=9 " tab as completion character
 set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build
-set wildmenu
 set wildmode=list:longest,full
-syntax on " syntax hilight on
 syntax sync fromstart
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
