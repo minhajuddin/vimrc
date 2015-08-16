@@ -1,13 +1,15 @@
+" vim: set foldmethod=marker foldlevel=0:
+" ============================================================================
+" .vimrc of Khaja Minhajuddin
+
 set nocompatible
-" filetype indent plugin on
-" Temporary fix to ignore current vim files while experimenting
+" Temporary fix to ignore current vim files while experimenting {{{
 set runtimepath-=~/.vim
 set runtimepath-=~/.vim/after
 set runtimepath+=~/newvim/
+"}}}
 
-" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"		HELP
-" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+" >>>>>>>>>>>>>	HELP {{{
 " Installation
 " 1. Install plug by running the following:
 "  curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
@@ -15,47 +17,51 @@ set runtimepath+=~/newvim/
 " 2. Open vim and run
 "     PlugInstall
 " 3. Install htmltidy from: https://github.com/htacg/tidy-html5
-" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+"}}}
 
-" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-"		PLUGINS
-" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+">>>>>>>>>>>>>>>>>>>>		PLUGINS {{{
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
-
-Plug 'tomasr/molokai' " colorscheme
-Plug 'scrooloose/nerdtree' " file browser
 Plug 'bling/vim-airline' " awesome status bar
 Plug 'bling/vim-bufferline'
-Plug 'scrooloose/syntastic'
-Plug 'tpope/vim-surround'
-Plug 'tpope/vim-abolish'
-Plug 'mattn/emmet-vim'
-Plug 'tpope/vim-fugitive'
+Plug 'cakebaker/scss-syntax.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'elixir-lang/vim-elixir'
+Plug 'elzr/vim-json'
+Plug 'kien/rainbow_parentheses.vim'
+Plug 'maksimr/vim-jsbeautify'
 Plug 'matchit.zip'
+Plug 'mattn/emmet-vim'
+Plug 'nginx.vim'
+Plug 'othree/html5.vim'
+Plug 'pangloss/vim-javascript'
 Plug 'scrooloose/nerdcommenter'
-Plug 'tpope/vim-repeat'
+Plug 'scrooloose/nerdtree' " file browser
+Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'ervandew/supertab'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'thoughtbot/vim-rspec'
+Plug 'tomasr/molokai' " colorscheme
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-bundler'
+Plug 'tpope/vim-dispatch' " async command execution
+Plug 'tpope/vim-endwise'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-haml'
+Plug 'tpope/vim-markdown'
+Plug 'tpope/vim-rails'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-sensible'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'vim-ruby/vim-ruby'
+Plug 'Yggdroot/indentLine'
+
+
+" Unused plugins
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 " Plug 'majutsushi/tagbar'
 " Plug 'dbext.vim' " check more on this
-" languages
-Plug 'vim-ruby/vim-ruby'
-Plug 'tpope/vim-rails'
-Plug 'tpope/vim-bundler'
-Plug 'tpope/vim-haml'
-Plug 'thoughtbot/vim-rspec'
-Plug 'othree/html5.vim'
-Plug 'pangloss/vim-javascript'
-Plug 'elzr/vim-json'
-Plug 'cakebaker/scss-syntax.vim'
-Plug 'tpope/vim-markdown'
-Plug 'elixir-lang/vim-elixir'
-Plug 'nginx.vim'
-Plug 'tpope/vim-dispatch' " async command execution
-Plug 'maksimr/vim-jsbeautify'
 " runtime macros/matchit.vim
 " Plug 'nelstrom/vim-textobj-rubyblock'
 " unused
@@ -64,31 +70,8 @@ Plug 'maksimr/vim-jsbeautify'
 " Plug 'groenewege/vim-less'
 " Plug 'mxw/vim-jsx'
 " Plug 'leafgarland/typescript-vim'
-
-"Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
-
-"" On-demand loading
-"Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
-"Plug 'tpope/vim-fireplace', { 'for': 'clojure' }
-
-"" Using git URL
-"Plug 'https://github.com/junegunn/vim-github-dashboard.git'
-
-"" Plugin options
-"Plug 'nsf/gocode', { 'tag': 'v.20150303', 'rtp': 'vim' }
-
-"" Plugin outside ~/.vim/plugged with post-update hook
-"Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' }
-
-"" Unmanaged plugin (manually installed and updated)
-"Plug '~/my-prototype-plugin'
-
-"" Add plugins to &runtimepath
-
-" All my settings are present in vimsettings
-" Plug 'minhajuddin/vimsettings'
 call plug#end()
-" <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+" }}}
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "		AUTOCOMMANDS
@@ -100,6 +83,7 @@ autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 "		VIM SETTINGS
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 " TODO Move these settings to: Plug 'minhajuddin/vimsettings'
+filetype plugin indent on
 colorscheme molokai
 
 " settings for gvim
@@ -131,6 +115,9 @@ set fileencoding=utf8
 set fillchars= " unset pipe as the vertical seperator
 set foldlevel=3
 set foldmethod=syntax
+set synmaxcol=200 " Syntax coloring lines that are too long just slows down the world
+set matchtime=0 " to stop automatic moving of cursor to matched paren
+let loaded_matchparen=1 " don't automatically highlight the matching parens
 set grepprg=grep\ -nH\ $*
 set hlsearch
 set ignorecase
@@ -157,14 +144,8 @@ set wildchar=9 " tab as completion character
 set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build
 set wildmenu
 set wildmode=list:longest,full
-" Spaces instead of tab characters
 syntax on " syntax hilight on
 syntax sync fromstart
-" tab completion stuff
-" This shows what you are typing as a command
-" vimdiff stuff
-
-
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -173,6 +154,14 @@ syntax sync fromstart
 " NERDTree
 let NERDTreeChDirMode=2 " Change the NERDTree directory to the root node
 
+let g:NERDShutUp = 1 " disable warnings from NERDCommenter
+
+" ultisnips
+let g:UltiSnipsExpandTrigger="<C-o>"
+let g:UltiSnipsJumpForwardTrigger="<C-n>"
+let g:UltiSnipsJumpBackwardTrigger="<C-p>"
+let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your window.
+
 " help bufferline
 let g:bufferline_echo = 0 " hide bufferline from command bar
 let g:bufferline_show_bufnr = 1
@@ -180,6 +169,36 @@ let g:bufferline_show_bufnr = 1
 " help vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dark'
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+
+" rainbow parans
+let g:rbpt_colorpairs = [
+    \ ['brown',       'RoyalBlue3'],
+    \ ['Darkblue',    'SeaGreen3'],
+    \ ['darkgray',    'DarkOrchid3'],
+    \ ['darkgreen',   'firebrick3'],
+    \ ['darkcyan',    'RoyalBlue3'],
+    \ ['darkred',     'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['brown',       'firebrick3'],
+    \ ['gray',        'RoyalBlue3'],
+    \ ['black',       'SeaGreen3'],
+    \ ['darkmagenta', 'DarkOrchid3'],
+    \ ['Darkblue',    'firebrick3'],
+    \ ['darkgreen',   'RoyalBlue3'],
+    \ ['darkcyan',    'SeaGreen3'],
+    \ ['darkred',     'DarkOrchid3'],
+    \ ['red',         'firebrick3'],
+    \ ]
+let g:rbpt_max = 16
+let g:rbpt_loadcmd_toggle = 0
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+" <<<<<
 
 " syntastic
 set statusline+=%#warningmsg#
@@ -190,6 +209,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+" indent
+let g:indentLine_char = '│'
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 
@@ -202,6 +224,6 @@ map <leader>nt :execute 'NERDTreeToggle'<cr>
 " map <leader>nc :execute 'NERDTreeClose'<cr>
 map <leader>nn :execute 'NERDTree'<cr>
 
-map <C-d> :execute 'source /home/minhajuddin/r/vimrc/vimrc \| PlugClean \| PlugInstall'<cr>
+map <C-d> :execute 'source /home/minhajuddin/r/vimrc/vimrc \| PlugInstall'<cr>
 
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
