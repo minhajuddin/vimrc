@@ -68,7 +68,13 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'wting/rust.vim'
 Plug 'Yggdroot/indentLine'
-Plug 'wincent/Command-T'
+" Plug 'wincent/Command-T'
+Plug 'kien/ctrlp.vim'
+Plug 'Raimondi/delimitMate'
+Plug 'tpope/vim-unimpaired'
+" Plug 'terryma/vim-multiple-cursors'
+Plug 'thinca/vim-quickrun'
+
 " Unused plugins
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 " Plug 'majutsushi/tagbar'
@@ -242,7 +248,8 @@ map <leader>nt :execute 'NERDTreeToggle'<cr>
 " map <leader>nc :execute 'NERDTreeClose'<cr>
 map <leader>nn :execute 'NERDTree'<cr>
 
-map <C-d> :execute 'source /home/minhajuddin/r/vimrc/vimrc \| PlugInstall'<cr>
+"map <C-d> :execute 'source /home/minhajuddin/r/vimrc/vimrc \| PlugInstall'<cr>
+map <C-d> :execute 'QuickRun'<cr>
 
 nnoremap <leader>K :call investigate#Investigate()<CR>
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
