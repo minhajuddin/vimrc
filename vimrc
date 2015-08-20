@@ -174,6 +174,12 @@ set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,
 set wildmode=list:longest,full
 set wrap!
 syntax sync fromstart
+
+
+" search stuff
+set gdefault            " Use 'g' flag by default with :s/foo/bar/.
+set magic               " Use 'magic' patterns (extended regular expressions).
+
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
@@ -193,12 +199,41 @@ let g:UltiSnipsEditSplit="vertical" " If you want :UltiSnipsEdit to split your w
 " help bufferline
 let g:bufferline_echo = 0 " hide bufferline from command bar
 let g:bufferline_show_bufnr = 1
+let g:bufferline_rotate = 2
+"let g:bufferline_fixed_index =  0 "always first
 
 " help vim-airline
 let g:airline_powerline_fonts = 1
 let g:airline_theme = 'dark'
 let g:airline_left_sep=''
 let g:airline_right_sep=''
+let g:airline_inactive_collapse=1
+let g:airline_mode_map = {
+    \ '__' : '-',
+    \ 'n'  : 'N',
+    \ 'i'  : 'I',
+    \ 'R'  : 'R',
+    \ 'c'  : 'C',
+    \ 'v'  : 'V',
+    \ 'V'  : 'V',
+    \ '' : 'V',
+    \ 's'  : 'S',
+    \ 'S'  : 'S',
+    \ '' : 'S',
+    \ }
+
+let g:airline#extensions#default#section_truncate_width = {
+      \ 'a': 40,
+      \ 'b': 80,
+      \ 'c': 40,
+      \ 'x': 60,
+      \ 'y': 90,
+      \ 'z': 50,
+      \ }
+
+" let g:airline_symbols.linenr = '' "hide linenr symbol
+let g:airline_section_z = '%3v' " just show the column number instead of %, linenr and the linenr symbol
+let g:airline#extensions#default#section_truncate_width = {}
 
 " rainbow parans
 let g:rbpt_colorpairs = [
@@ -247,6 +282,7 @@ let g:indentLine_char = '│'
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
 "		MAPPINGS
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"
 " NERDTree
 map <leader>nt :execute 'NERDTreeToggle'<cr>
 " map <leader>nc :execute 'NERDTreeClose'<cr>
@@ -260,5 +296,40 @@ nnoremap <leader>K :call investigate#Investigate()<CR>
 " CUSTOM FUNCTIONS
 " >>>>>
 " TODO:
+
 " Opens current buffer in a new window if there are more than one windows open
 " Otherwise closes the current buffer
+function! ToggleZainabZoom()
+  " to save the cursor position
+  let l:winview = winsaveview()
+
+  if winnr('$') == 1
+    " if there is just one window open
+    " close this window
+    :close
+  else
+    " open the current window in a new tab
+    :tabe %
+  endif
+
+  " restore cursor position
+  call winrestview(l:winview)
+endfunction
+
+nnoremap <C-i> :call ToggleZainabZoom()<cr>
+
+nnoremap Q @q "  Use Q to execute default register.
+
+
+let g:airline#extensions#tabline#show_close_button = 0
+let g:airline#extensions#tabline#enabled = 2
+let g:airline#extensions#tabline#fnamemod = ':t'
+let g:airline#extensions#tabline#left_sep = ''
+let g:airline#extensions#tabline#left_alt_sep = ''
+let g:airline#extensions#tabline#right_sep = ''
+let g:airline#extensions#tabline#right_alt_sep = ''
+let g:airline#extensions#tabline#buffer_nr_show = 1
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
