@@ -74,6 +74,10 @@ Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-unimpaired'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'thinca/vim-quickrun'
+Plug 'kshenoy/vim-signature'
+Plug 'airblade/vim-gitgutter'
+" Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
+" Plug 'junegunn/fzf.vim'
 
 " Unused plugins
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
@@ -253,3 +257,8 @@ map <C-d> :execute 'QuickRun'<cr>
 
 nnoremap <leader>K :call investigate#Investigate()<CR>
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+" CUSTOM FUNCTIONS
+" >>>>>
+" TODO:
+" Opens current buffer in a new window if there are more than one windows open
+" Otherwise closes the current buffer
