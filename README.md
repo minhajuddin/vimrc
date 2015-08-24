@@ -14,8 +14,15 @@ Managed by vimplug
          hit :tn to go to the next match
       c. gf in Gemfile to open the gem in your editor
 
+
   3. emmet: https://raw.githubusercontent.com/mattn/emmet-vim/master/TUTORIAL
       a. <Ctrl-Y>, to expand
 
   4. easymotion
 	,,
+
+  5. Git gutter
+    `]c`: next hunk
+    `[c`: prev hunk
+    `<leader>hs`: stage hunk
+    `<leader>hr`: reset hunk

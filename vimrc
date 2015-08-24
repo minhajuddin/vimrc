@@ -68,7 +68,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'wting/rust.vim'
 Plug 'Yggdroot/indentLine'
-" Plug 'wincent/Command-T'
+Plug 'wincent/Command-T'
 Plug 'kien/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-unimpaired'
@@ -77,6 +77,9 @@ Plug 'thinca/vim-quickrun'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/NrrwRgn'
+Plug 'bronson/vim-trailing-whitespace'
+Plug 'junegunn/goyo.vim'
+" Plug 'skalnik/vim-vroom'
 " Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
 " Plug 'junegunn/fzf.vim'
 
