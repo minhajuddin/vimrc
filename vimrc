@@ -76,6 +76,7 @@ Plug 'tpope/vim-unimpaired'
 Plug 'thinca/vim-quickrun'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
+Plug 'chrisbra/NrrwRgn'
 " Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
 " Plug 'junegunn/fzf.vim'
 
@@ -221,6 +222,8 @@ let g:airline_mode_map = {
     \ 'S'  : 'S',
     \ '' : 'S',
     \ }
+
+let g:airline#extensions#hunks#enabled = 0
 
 let g:airline#extensions#default#section_truncate_width = {
       \ 'a': 40,
