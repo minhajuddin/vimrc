@@ -73,12 +73,14 @@ Plug 'kien/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'tpope/vim-unimpaired'
 " Plug 'terryma/vim-multiple-cursors'
-Plug 'thinca/vim-quickrun'
+Plug 'minhajuddin/vim-quickrun'
 Plug 'kshenoy/vim-signature'
 Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/NrrwRgn'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/goyo.vim'
+Plug 'godlygeek/tabular'
+Plug 'mileszs/ack.vim'
 " Plug 'skalnik/vim-vroom'
 " Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
 " Plug 'junegunn/fzf.vim'
@@ -323,6 +325,7 @@ function! ToggleZainabZoom()
 endfunction
 
 nnoremap <C-i> :call ToggleZainabZoom()<cr>
+nnoremap <C-b> :bd<cr>
 
 nnoremap Q @q "  Use Q to execute default register.
 
@@ -339,3 +342,7 @@ let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
 let g:airline_right_alt_sep = ''
+
+"Ack stuff
+let g:ackprg="ack-grep -H --nocolor --nogroup --column"
+nnoremap <leader>a :execute 'Ack'<cr>
