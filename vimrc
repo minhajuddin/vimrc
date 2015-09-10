@@ -81,6 +81,8 @@ Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/goyo.vim'
 Plug 'godlygeek/tabular'
 Plug 'mileszs/ack.vim'
+Plug 'minhajuddin/zainu-vim'
+Plug 'altercation/vim-colors-solarized'
 " Plug 'skalnik/vim-vroom'
 " Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
 " Plug 'junegunn/fzf.vim'
@@ -314,27 +316,8 @@ nnoremap <leader>K :call investigate#Investigate()<CR>
 " >>>>>
 " TODO:
 
-" Opens current buffer in a new window if there are more than one windows open
-" Otherwise closes the current buffer
-function! ToggleZainabZoom()
-  " to save the cursor position
-  let l:winview = winsaveview()
-
-  if winnr('$') == 1
-    " if there is just one window open
-    " close this window
-    :close
-  else
-    " open the current window in a new tab
-    :tabe %
-  endif
-
-  " restore cursor position
-  call winrestview(l:winview)
-endfunction
-
-nnoremap <C-i> :call ToggleZainabZoom()<cr>
-nnoremap <C-b> :bd<cr>
+" close the current buffer
+nnoremap <C-b> :close<cr>
 
 nnoremap Q @q "  Use Q to execute default register.
 
@@ -355,3 +338,5 @@ let g:airline_right_alt_sep = ''
 "Ack stuff
 let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :execute 'Ack'<cr>
+" Disable YCM
+"let g:loaded_youcompleteme = 1
