@@ -322,14 +322,15 @@ nnoremap <C-b> :close<cr>
 nnoremap Q @q "  Use Q to execute default register.
 
 
-let g:airline#extensions#tabline#show_close_button = 0
-let g:airline#extensions#tabline#enabled = 2
-let g:airline#extensions#tabline#fnamemod = ':t'
-let g:airline#extensions#tabline#left_sep = ''
-let g:airline#extensions#tabline#left_alt_sep = ''
-let g:airline#extensions#tabline#right_sep = ''
-let g:airline#extensions#tabline#right_alt_sep = ''
-let g:airline#extensions#tabline#buffer_nr_show = 1
+"let g:airline#extensions#tabline#show_close_button = 0
+"let g:airline#extensions#tabline#enabled = 2
+"let g:airline#extensions#tabline#fnamemod = ':t'
+"let g:airline#extensions#tabline#left_sep = ''
+"let g:airline#extensions#tabline#left_alt_sep = ''
+"let g:airline#extensions#tabline#right_sep = ''
+"let g:airline#extensions#tabline#right_alt_sep = ''
+"let g:airline#extensions#tabline#buffer_nr_show = 1
+
 let g:airline_left_sep = ''
 let g:airline_left_alt_sep = ''
 let g:airline_right_sep = ''
@@ -340,3 +341,9 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :execute 'Ack'<cr>
 " Disable YCM
 "let g:loaded_youcompleteme = 1
+
+" Abbreviations
+iabbrev td [ ]
+iabbrev <expr> tds "# TODO for " . strftime("%Y-%m-%d %T")
+
+" >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
