@@ -83,6 +83,8 @@ Plug 'godlygeek/tabular'
 Plug 'mileszs/ack.vim'
 Plug 'minhajuddin/zainu-vim'
 Plug 'altercation/vim-colors-solarized'
+Plug 'mustache/vim-mustache-handlebars'
+Plug 'tacahiroy/ctrlp-funky'
 " Plug 'skalnik/vim-vroom'
 " Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
 " Plug 'junegunn/fzf.vim'
@@ -193,8 +195,8 @@ set magic               " Use 'magic' patterns (extended regular expressions).
 "    means that you can undo even when you close a buffer/VIM
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 try
-    set undodir=~/.vim_runtime/temp_dirs/undodir
-    set undofile
+  set undodir=~/.vim_runtime/temp_dirs/undodir
+  set undofile
 catch
 endtry
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
@@ -226,18 +228,18 @@ let g:airline_left_sep=''
 let g:airline_right_sep=''
 let g:airline_inactive_collapse=1
 let g:airline_mode_map = {
-    \ '__' : '-',
-    \ 'n'  : 'N',
-    \ 'i'  : 'I',
-    \ 'R'  : 'R',
-    \ 'c'  : 'C',
-    \ 'v'  : 'V',
-    \ 'V'  : 'V',
-    \ '' : 'V',
-    \ 's'  : 'S',
-    \ 'S'  : 'S',
-    \ '' : 'S',
-    \ }
+      \ '__' : '-',
+      \ 'n'  : 'N',
+      \ 'i'  : 'I',
+      \ 'R'  : 'R',
+      \ 'c'  : 'C',
+      \ 'v'  : 'V',
+      \ 'V'  : 'V',
+      \ '' : 'V',
+      \ 's'  : 'S',
+      \ 'S'  : 'S',
+      \ '' : 'S',
+      \ }
 
 let g:airline#extensions#hunks#enabled = 0
 
@@ -256,23 +258,23 @@ let g:airline#extensions#default#section_truncate_width = {}
 
 " rainbow parans
 let g:rbpt_colorpairs = [
-    \ ['brown',       'RoyalBlue3'],
-    \ ['Darkblue',    'SeaGreen3'],
-    \ ['darkgray',    'DarkOrchid3'],
-    \ ['darkgreen',   'firebrick3'],
-    \ ['darkcyan',    'RoyalBlue3'],
-    \ ['darkred',     'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['brown',       'firebrick3'],
-    \ ['gray',        'RoyalBlue3'],
-    \ ['black',       'SeaGreen3'],
-    \ ['darkmagenta', 'DarkOrchid3'],
-    \ ['Darkblue',    'firebrick3'],
-    \ ['darkgreen',   'RoyalBlue3'],
-    \ ['darkcyan',    'SeaGreen3'],
-    \ ['darkred',     'DarkOrchid3'],
-    \ ['red',         'firebrick3'],
-    \ ]
+      \ ['brown',       'RoyalBlue3'],
+      \ ['Darkblue',    'SeaGreen3'],
+      \ ['darkgray',    'DarkOrchid3'],
+      \ ['darkgreen',   'firebrick3'],
+      \ ['darkcyan',    'RoyalBlue3'],
+      \ ['darkred',     'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['brown',       'firebrick3'],
+      \ ['gray',        'RoyalBlue3'],
+      \ ['black',       'SeaGreen3'],
+      \ ['darkmagenta', 'DarkOrchid3'],
+      \ ['Darkblue',    'firebrick3'],
+      \ ['darkgreen',   'RoyalBlue3'],
+      \ ['darkcyan',    'SeaGreen3'],
+      \ ['darkred',     'DarkOrchid3'],
+      \ ['red',         'firebrick3'],
+      \ ]
 let g:rbpt_max = 16
 let g:rbpt_loadcmd_toggle = 0
 
@@ -293,7 +295,7 @@ let g:syntastic_check_on_wq = 0
 
 " indent
 let g:indentLine_char = '│'
-"let g:indentLine_color_gui = '#333333'
+let g:indentLine_color_gui = '#333333'
 "let g:indentLine_char = "┊"
 " <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
 
@@ -315,9 +317,6 @@ nnoremap <leader>K :call investigate#Investigate()<CR>
 " CUSTOM FUNCTIONS
 " >>>>>
 " TODO:
-
-" close the current buffer
-nnoremap <C-b> :close<cr>
 
 nnoremap Q @q "  Use Q to execute default register.
 
@@ -341,9 +340,4 @@ let g:ackprg="ack-grep -H --nocolor --nogroup --column"
 nnoremap <leader>a :execute 'Ack'<cr>
 " Disable YCM
 "let g:loaded_youcompleteme = 1
-
-" Abbreviations
-iabbrev td [ ]
-iabbrev <expr> tds "# TODO for " . strftime("%Y-%m-%d %T")
-
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
