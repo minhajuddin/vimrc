@@ -44,6 +44,7 @@ Plug 'mattn/emmet-vim'
 Plug 'nginx.vim'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
+Plug 'maksimr/vim-jsbeautify'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' " file browser
