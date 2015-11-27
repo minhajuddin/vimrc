@@ -181,7 +181,7 @@ set timeoutlen=500
 set virtualedit=block
 set whichwrap=b,s
 set wildchar=9 " tab as completion character
-set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build
+set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build,vendor/assets/bower
 set wildmode=list:longest,full
 set wrap!
 syntax sync fromstart
