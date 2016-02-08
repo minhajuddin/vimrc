@@ -3,11 +3,6 @@
 " .vimrc of Khaja Minhajuddin
 
 set nocompatible
-" Temporary fix to ignore current vim files while experimenting {{{
-set runtimepath-=~/.vim
-set runtimepath-=~/.vim/after
-set runtimepath+=~/newvim/
-"}}}
 
 " >>>>>>>>>>>>>	HELP {{{
 " Installation
@@ -22,6 +17,7 @@ set runtimepath+=~/newvim/
 ">>>>>>>>>>>>>>>>>>>>		PLUGINS {{{
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
+Plug 'tpope/vim-speeddating'
 Plug 'bling/vim-airline' " awesome status bar
 Plug 'bling/vim-bufferline'
 Plug 'cakebaker/scss-syntax.vim'
@@ -65,7 +61,7 @@ Plug 'tpope/vim-rails'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-sensible'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe', { 'do': './install.sh' }
+Plug 'Valloric/YouCompleteMe', { 'do': './install.py --clang-completer --gocode-completer --tern-completer' }
 Plug 'vim-ruby/vim-ruby'
 Plug 'wting/rust.vim'
 Plug 'Yggdroot/indentLine'
@@ -76,7 +72,7 @@ Plug 'tpope/vim-unimpaired'
 " Plug 'terryma/vim-multiple-cursors'
 Plug 'minhajuddin/vim-quickrun'
 Plug 'kshenoy/vim-signature'
-Plug 'airblade/vim-gitgutter'
+"Plug 'airblade/vim-gitgutter'
 Plug 'chrisbra/NrrwRgn'
 Plug 'bronson/vim-trailing-whitespace'
 Plug 'junegunn/goyo.vim'
@@ -86,6 +82,14 @@ Plug 'minhajuddin/zainu-vim'
 Plug 'altercation/vim-colors-solarized'
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'tacahiroy/ctrlp-funky'
+Plug 'thinca/vim-ref'
+Plug 'briancollins/vim-jst'
+Plug 'jceb/vim-orgmode'
+Plug 'kana/vim-textobj-user'
+Plug 'nelstrom/vim-textobj-rubyblock'
+Plug 'benmills/vimux'
+Plug 'jgdavey/vim-turbux'
+Plug 'danro/rename.vim'
 " Plug 'skalnik/vim-vroom'
 " Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
 " Plug 'junegunn/fzf.vim'
@@ -94,7 +98,7 @@ Plug 'tacahiroy/ctrlp-funky'
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
 " Plug 'majutsushi/tagbar'
 " Plug 'dbext.vim' " check more on this
-" runtime macros/matchit.vim
+runtime macros/matchit.vim
 " Plug 'nelstrom/vim-textobj-rubyblock'
 " unused
 " Plug 'kchmck/vim-coffee-script'
@@ -181,7 +185,7 @@ set timeoutlen=500
 set virtualedit=block
 set whichwrap=b,s
 set wildchar=9 " tab as completion character
-set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build,vendor/assets/bower
+set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build,vendor/assets/bower,__*
 set wildmode=list:longest,full
 set wrap!
 syntax sync fromstart
@@ -321,6 +325,9 @@ nnoremap <leader>K :call investigate#Investigate()<CR>
 
 nnoremap Q @q "  Use Q to execute default register.
 
+" Org mode stuff
+let g:org_agenda_files = ['~/org/*.org']
+
 
 "let g:airline#extensions#tabline#show_close_button = 0
 "let g:airline#extensions#tabline#enabled = 2
@@ -342,3 +349,13 @@ nnoremap <leader>a :execute 'Ack'<cr>
 " Disable YCM
 "let g:loaded_youcompleteme = 1
 " >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+"
+"
+"
+" Golang stuff
+let g:go_fmt_command = "goimports"
+
+
+" Syntastic
+let g:syntastic_eruby_ruby_quiet_messages =
+    \ {'regex': 'possibly useless use of a variable in void context'}
