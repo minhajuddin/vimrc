@@ -3,6 +3,7 @@
 " .vimrc of Khaja Minhajuddin
 
 set nocompatible
+"let g:loaded_syntastic_sass_sass_checker = 1 " disable syntastic for sass
 
 " >>>>>>>>>>>>>	HELP {{{
 " Installation
@@ -37,7 +38,7 @@ Plug 'kien/rainbow_parentheses.vim'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'matchit.zip'
 Plug 'mattn/emmet-vim'
-Plug 'nginx.vim'
+Plug 'evanmiller/nginx-vim-syntax'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
 Plug 'maksimr/vim-jsbeautify'
@@ -90,6 +91,10 @@ Plug 'nelstrom/vim-textobj-rubyblock'
 Plug 'benmills/vimux'
 Plug 'jgdavey/vim-turbux'
 Plug 'danro/rename.vim'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'wavded/vim-stylus'
+Plug 'digitaltoad/vim-pug'
+"Plug 'ryanoasis/vim-devicons'
 " Plug 'skalnik/vim-vroom'
 " Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
 " Plug 'junegunn/fzf.vim'
@@ -185,7 +190,7 @@ set timeoutlen=500
 set virtualedit=block
 set whichwrap=b,s
 set wildchar=9 " tab as completion character
-set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build,vendor/assets/bower,__*
+set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build,vendor/assets/bower,__*,data/*
 set wildmode=list:longest,full
 set wrap!
 syntax sync fromstart
@@ -358,4 +363,4 @@ let g:go_fmt_command = "goimports"
 
 " Syntastic
 let g:syntastic_eruby_ruby_quiet_messages =
-    \ {'regex': 'possibly useless use of a variable in void context'}
+      \ {'regex': 'possibly useless use of a variable in void context'}
