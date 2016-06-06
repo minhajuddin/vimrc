@@ -18,6 +18,7 @@ set nocompatible
 ">>>>>>>>>>>>>>>>>>>>		PLUGINS {{{
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
+Plug 'KabbAmine/zeavim.vim'
 Plug 'tpope/vim-speeddating'
 Plug 'bling/vim-airline' " awesome status bar
 Plug 'bling/vim-bufferline'
@@ -41,7 +42,6 @@ Plug 'mattn/emmet-vim'
 Plug 'evanmiller/nginx-vim-syntax'
 Plug 'othree/html5.vim'
 Plug 'pangloss/vim-javascript'
-Plug 'maksimr/vim-jsbeautify'
 Plug 'plasticboy/vim-markdown'
 Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' " file browser
@@ -94,6 +94,9 @@ Plug 'danro/rename.vim'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'wavded/vim-stylus'
 Plug 'digitaltoad/vim-pug'
+Plug 'slashmili/alchemist.vim'
+Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
+
 "Plug 'ryanoasis/vim-devicons'
 " Plug 'skalnik/vim-vroom'
 " Plug 'junegunn/fzf',        { 'do': 'yes \| ./install' }
@@ -101,7 +104,7 @@ Plug 'digitaltoad/vim-pug'
 
 " Unused plugins
 " Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': 'yes \| ./install' } " fuzzy file finder
-" Plug 'majutsushi/tagbar'
+Plug 'majutsushi/tagbar'
 " Plug 'dbext.vim' " check more on this
 runtime macros/matchit.vim
 " Plug 'nelstrom/vim-textobj-rubyblock'
