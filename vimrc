@@ -17,6 +17,7 @@ set nocompatible
 ">>>>>>>>>>>>>>>>>>>>		PLUGINS {{{
 call plug#begin('~/.vim/plugged')
 " Make sure you use single quotes
+Plug 'szw/vim-tags'
 Plug 'KabbAmine/zeavim.vim'
 Plug 'bling/vim-airline' " awesome status bar
 Plug 'bling/vim-bufferline'
@@ -33,7 +34,7 @@ Plug 'scrooloose/nerdcommenter'
 Plug 'scrooloose/nerdtree' " file browser
 Plug 'scrooloose/syntastic'
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
-Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets'
+Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' | Plug 'minhajuddin/snippets'
 Plug 'tomasr/molokai' " colorscheme
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-dispatch' " async command execution
@@ -65,6 +66,8 @@ Plug 'vim-airline/vim-airline-themes'
 Plug 'slashmili/alchemist.vim'
 Plug 'marijnh/tern_for_vim', { 'do': 'npm install' }
 Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-projectionist'
+
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Language plugs
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,7 +92,9 @@ Plug 'tpope/vim-rails'
 Plug 'vim-ruby/vim-ruby'
 Plug 'wavded/vim-stylus'
 Plug 'wting/rust.vim'
-
+Plug 'lambdatoast/elm.vim'
+Plug 'Matt-Deacalion/vim-systemd-syntax'
+" Plug 'avdgaag/vim-phoenix'
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 " Unused plugs
 " ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -117,6 +122,7 @@ Plug 'wting/rust.vim'
 " Plug 'groenewege/vim-less'
 " Plug 'mxw/vim-jsx'
 " Plug 'leafgarland/typescript-vim'
+" Plug 'tpope/vim-vinegar'
 runtime macros/matchit.vim
 call plug#end()
 " }}}
@@ -197,7 +203,7 @@ set timeoutlen=500
 set virtualedit=block
 set whichwrap=b,s
 set wildchar=9 " tab as completion character
-set wildignore+=*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build,vendor/assets/bower,__*,data/*
+set wildignore+=node_modules,deps,*.gif,*.fla,*.png,*.swf,*.jpg,tmp/*,public/assets/*,*.ogv,*.ico,*.pdf,node_modules,_build,vendor/assets/bower,__*,data/*,rel/*,priv/static/*
 set wildmode=list:longest,full
 set wrap!
 syntax sync fromstart
@@ -367,7 +373,29 @@ nnoremap <leader>a :execute 'Ack'<cr>
 " Golang stuff
 let g:go_fmt_command = "goimports"
 
-
+let g:UltiSnipsSnippetsDir = "/home/minhajuddin/.vim/plugged/snippets/UltiSnips"
 " Syntastic
 let g:syntastic_eruby_ruby_quiet_messages =
       \ {'regex': 'possibly useless use of a variable in void context'}
+
+
+let g:elm_format_autosave = 1
+
+let g:tagbar_type_elixir = {
+    \ 'ctagstype' : 'elixir',
+    \ 'kinds' : [
+        \ 'f:functions',
+        \ 'functions:functions',
+        \ 'c:callbacks',
+        \ 'd:delegates',
+        \ 'e:exceptions',
+        \ 'i:implementations',
+        \ 'a:macros',
+        \ 'o:operators',
+        \ 'm:modules',
+        \ 'p:protocols',
+        \ 'r:records'
+    \ ]
+\ }
+
+let g:alchemist_tag_disable = 1
