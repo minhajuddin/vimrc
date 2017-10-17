@@ -7,6 +7,8 @@ set nocompatible
 
 " >>>>>>>>>>>>>	HELP {{{
 " Installation
+" 0. Copy this vimrc to your ~/.vimrc
+"  curl -o ~/.vimrc https://raw.githubusercontent.com/minhajuddin/vimrc/master/vimrc
 " 1. Install plug by running the following:
 "  curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 " 2. Open vim and run
